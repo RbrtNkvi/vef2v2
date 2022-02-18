@@ -1,7 +1,13 @@
+import { createSchema, dropSchema } from './lib/db.js';
 import { createUser } from './lib/users.js';
 
+const SCHEMA_FILE = './sql/schema.sql';
+const DROP_SCHEMA_FILE = './sql/drop.sql';
+
 async function create() {
-  // TODO setja upp gagnagrun + gögn
+
+  dropSchema(DROP_SCHEMA_FILE);
+  createSchema(SCHEMA_FILE);
   createUser('admin', '123');
 }
 
