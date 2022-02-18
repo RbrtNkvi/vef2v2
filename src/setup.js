@@ -6,10 +6,9 @@ const DROP_SCHEMA_FILE = './sql/drop.sql';
 const INSERT_SCHEMA_FILE = './sql/insert.sql';
 
 async function create() {
-
-  insertSchema(INSERT_SCHEMA_FILE);
   dropSchema(DROP_SCHEMA_FILE);
   createSchema(SCHEMA_FILE);
+  insertSchema(INSERT_SCHEMA_FILE);
   createUser('admin', '123');
 }
 
