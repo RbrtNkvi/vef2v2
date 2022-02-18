@@ -7,6 +7,8 @@ const DROP_SCHEMA_FILE = './sql/drop.sql';
 async function create() {
   dropSchema(DROP_SCHEMA_FILE);
   createSchema(SCHEMA_FILE);
+  createSchema('./sql/schemaN.sql');
+  createSchema('./sql/schemaS.sql');
   createUser('admin', '123');
 }
 
