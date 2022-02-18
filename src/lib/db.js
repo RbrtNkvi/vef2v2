@@ -6,6 +6,7 @@ dotenv.config();
 
 const SCHEMA_FILE = './sql/schema.sql';
 const DROP_SCHEMA_FILE = './sql/drop.sql';
+const INSERT_SCHEMA_FILE = './sql/insert.sql';
 
 const { DATABASE_URL: connectionString, NODE_ENV: nodeEnv = 'development' } =
   process.env;
@@ -56,6 +57,12 @@ export async function createSchema(schemaFile = SCHEMA_FILE) {
 
 export async function dropSchema(dropFile = DROP_SCHEMA_FILE) {
   const data = await readFile(dropFile);
+
+  return query(data.toString('utf-8'));
+}
+
+export async function insertSchema(insertFile = INSERT_SCHEMA_FILE) {
+  const data = await readFile(insertFile);
 
   return query(data.toString('utf-8'));
 }
