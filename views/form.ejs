@@ -1,14 +1,15 @@
+<div class="form">
 <h2>Skráðu þig</h2>
 
 <form method="post" action="/<%= slug %>" enctype="application/x-www-form-urlencoded" class="form-skraning">
   <div class="field<%= locals.isInvalid('name', errors) ?  ' field--invalid' : '' %>">
-    <label for="name">Nafn*</label>
-    <input type="text" name="name" id="name" value="<%= formData.name %>" class="">
+    <label for="name">Nafn*:</label>
+    <input type="text" name="name" id="name" value="<%= formData.name %>" class="textarea">
   </div>
 
   <div class="field<%= locals.isInvalid('comment', errors) ?  ' field--invalid' : '' %>">
-    <label for="comment">Athugasemd*</label>
-    <input type="text" name="comment" id="comment" value="<%= formData.comment %>" class="">
+    <label for="comment">Athugasemd:</label>
+    <input type="text" name="comment" id="comment" value="<%= formData.comment %>" class="textarea">
   </div>
 
   <% if (errors.length > 0) { %>
@@ -22,3 +23,5 @@
 
   <button class="form-button">Skrá mig</button>
 </form>
+</div>
+

@@ -1,17 +1,19 @@
 <%- include('header') -%>
 
+<div class="title">
 <h1>Innskráning</h1>
+</div>
 
 <form class="form" method="post" action="/admin/login" autocomplete="off">
   <div class="field">
     <label for="username">Notendanafn</label>
-    <input type="text" name="username" id="username">
+    <input type="text" name="username" id="username" class="textarea">
   </div>
 
 
   <div class="field">
     <label for="password">Lykilorð</label>
-    <input type="password" name="password" id="password">
+    <input type="password" name="password" id="password" class="textarea">
   </div>
 
   <% if (message) { %>

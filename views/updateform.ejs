@@ -1,14 +1,15 @@
+<div class="form">
 <h2>Uppfæra viðburð</h2>
 
 <form method="post" action="/admin/<%= slug %>" enctype="application/x-www-form-urlencoded" class="form-vidburdur">
   <div class="field<%= locals.isInvalid('name', errors) ?  ' field--invalid' : '' %>">
-    <label for="name">Nafn*</label>
-    <input type="text" name="name" id="name" value="<%= vidburdurData.name %>" class="">
+    <label for="name">Nafn*:</label>
+    <input type="text" name="name" id="name" value="<%= vidburdurData.name %>" class="textarea">
   </div>
 
   <div class="field<%= locals.isInvalid('description', errors) ?  ' field--invalid' : '' %>">
-    <label for="description">Lýsing*</label>
-    <input type="text" name="description" id="description" value="<%= vidburdurData.description %>" class="">
+    <label for="description">Lýsing:</label>
+    <input type="text" name="description" id="description" value="<%= vidburdurData.description %>" class="textarea">
   </div>
 
   <% if (errors.length > 0) { %>
@@ -22,3 +23,4 @@
 
   <button class="form-button">Uppfæra viðburð</button>
 </form>
+</div>

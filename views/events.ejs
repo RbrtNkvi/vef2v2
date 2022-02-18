@@ -8,10 +8,10 @@
         <li>
           <a href="<%= row.slug %>"><%= row.name %></a>
           <% if(row.description) { %>
-            <p><%= row.description %></p>
+          <p><%= row.description %></p>
           <% } %>
           <% if(admin) { %>
-            <a href="/admin/<%= row.slug %>">Uppfæra viðburð</a>
+          <a href="/admin/<%= row.slug %>">Uppfæra viðburð</a>
           <% } %>
         </li>
       <% }) %>

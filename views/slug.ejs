@@ -1,17 +1,19 @@
 <%- include('header') -%>
 
+<div class="title">
 <h1><%= slugEvent[0].name %></h1>
 <p><%= slugEvent[0].description %></p>
+</div>
 
 <section class="registrations">
-  <h2>Skráning á viðburð</h2>
+  <h2>Skráningar á viðburð</h2>
   <% if(registrations.length === 0) { %>
     <p>Enginn hefur skráð sig á þennan viðburð</p>
   <% } else { %>
     <ul>
       <% registrations.forEach((row) => { %>
         <li>
-          <p><%= row.name %></p>
+          <p class="li-name"><%= row.name %></p>
           <% if(row.comment) { %>
             <p><%= row.comment %></p>
           <% } %>
@@ -23,6 +25,8 @@
 
 <%- include('form') -%>
 
+<div class="link">
 <a href="/">Til baka</a>
+</div>
 
 <%- include('footer') -%>
