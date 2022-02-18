@@ -1,0 +1,28 @@
+<%- include('header') -%>
+
+<h1><%= slugEvent[0].name %></h1>
+<p><%= slugEvent[0].description %></p>
+
+<section class="registrations">
+  <h2>Skráning á viðburð</h2>
+  <% if(registrations.length === 0) { %>
+    <p>Enginn hefur skráð sig á þennan viðburð</p>
+  <% } else { %>
+    <ul>
+      <% registrations.forEach((row) => { %>
+        <li>
+          <p><%= row.name %></p>
+          <% if(row.comment) { %>
+            <p><%= row.comment %></p>
+          <% } %>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</section>
+
+<%- include('form') -%>
+
+<a href="/">Til baka</a>
+
+<%- include('footer') -%>

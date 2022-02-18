@@ -1,0 +1,24 @@
+<h2>Skráðu þig</h2>
+
+<form method="post" action="/<%= slug %>" enctype="application/x-www-form-urlencoded" class="form-skraning">
+  <div class="field<%= locals.isInvalid('name', errors) ?  ' field--invalid' : '' %>">
+    <label for="name">Nafn*</label>
+    <input type="text" name="name" id="name" value="<%= formData.name %>" class="">
+  </div>
+
+  <div class="field<%= locals.isInvalid('comment', errors) ?  ' field--invalid' : '' %>">
+    <label for="comment">Athugasemd*</label>
+    <input type="text" name="comment" id="comment" value="<%= formData.comment %>" class="">
+  </div>
+
+  <% if (errors.length > 0) { %>
+    <h2 class="errors__title">Villur við undirskrift:</h2>
+    <ul class="errors">
+      <% errors.forEach((error) => { %>
+        <li class="error"><label for="<%= error.param %>"><%= error.msg %></label></li>
+      <% }); %>
+    </ul>
+  <% } %>
+
+  <button class="form-button">Skrá mig</button>
+</form>

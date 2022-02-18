@@ -1,0 +1,26 @@
+<% if(admin) { %>
+<h2>Nýr viðburður</h2>
+
+<form method="post" action="/admin" enctype="application/x-www-form-urlencoded" class="form-vidburdur">
+  <div class="field<%= locals.isInvalid('name', errors) ?  ' field--invalid' : '' %>">
+    <label for="name">Nafn*</label>
+    <input type="text" name="name" id="name" value="<%= vidburdurData.name %>" class="">
+  </div>
+
+  <div class="field<%= locals.isInvalid('description', errors) ?  ' field--invalid' : '' %>">
+    <label for="description">Lýsing*</label>
+    <input type="text" name="description" id="description" value="<%= vidburdurData.description %>" class="">
+  </div>
+
+  <% if (errors.length > 0) { %>
+    <h2 class="errors__title">Villur við undirskrift:</h2>
+    <ul class="errors">
+      <% errors.forEach((error) => { %>
+        <li class="error"><label for="<%= error.param %>"><%= error.msg %></label></li>
+      <% }); %>
+    </ul>
+  <% } %>
+
+  <button class="form-button">Skrá viðburð</button>
+</form>
+<% } %>
